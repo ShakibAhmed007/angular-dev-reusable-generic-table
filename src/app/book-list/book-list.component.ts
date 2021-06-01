@@ -17,26 +17,25 @@ export class BookListComponent implements OnInit {
     { id: 1, bookName: 'Are You There, Vodka?', price: 1.0079, author: 'A' },
     {
       id: 2,
-      bookName: 'The Devil Wears Prada by Lauren Weisberger',
+      bookName: 'The Devil Wears Prada',
       price: 4.0026,
       author: 'B'
     },
     {
       id: 3,
-      bookName:
-        'The Curious Incident of the Dog in the Night-Time by Mark Haddon',
+      bookName: 'The Curious Incident of the Dog',
       price: 6.941,
       author: 'C'
     },
     {
       id: 4,
-      bookName: 'How to Win Friends and Influence People by Dale Carnegie',
+      bookName: 'How to Win Friends and Influence',
       price: 9.0122,
       author: 'D'
     },
     {
       id: 5,
-      bookName: 'Cloudy with a Chance of Meatballs by Judi Barrett.',
+      bookName: 'Cloudy with a Chance of Meatballs',
       price: 10.811,
       author: 'E'
     }
