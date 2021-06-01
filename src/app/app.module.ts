@@ -7,10 +7,17 @@ import { HelloComponent } from './hello.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { GenericTableComponent } from './generic-table/generic-table.component';
+
 import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, MatTableModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    MatTableModule,
+    BrowserAnimationsModule
+  ],
   declarations: [
     AppComponent,
     HelloComponent,
