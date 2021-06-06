@@ -11,7 +11,8 @@ export class UserListComponent implements OnInit {
     id: 'ID',
     userName: 'User Name',
     userEmail: 'Email',
-    age: 'Age'
+    age: 'Age',
+    actions: 'Actions'
   };
 
   tableData: any[];
