@@ -46,4 +46,8 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  handleClick(event, eventType) {
+    console.log(event, eventType);
+  }
 }
