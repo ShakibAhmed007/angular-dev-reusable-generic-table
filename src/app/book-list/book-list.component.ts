@@ -10,7 +10,8 @@ export class BookListComponent implements OnInit {
     id: 'ID',
     bookName: 'Book Name',
     price: 'Price',
-    author: 'Author'
+    author: 'Author',
+    actions: 'Actions'
   };
 
   tableData: any[] = [
