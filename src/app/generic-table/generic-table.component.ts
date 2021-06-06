@@ -17,6 +17,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class GenericTableComponent implements OnInit, AfterViewInit {
   @Input() tableData;
   @Input() columnHeader;
+  @Input() service;
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -27,6 +28,7 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   ngOnInit() {
+    console.log('service', this.service);
     console.log(this.tableData);
     this.dataSource = new MatTableDataSource(this.tableData);
   }
