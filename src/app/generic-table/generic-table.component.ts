@@ -48,6 +48,7 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
   }
 
   handleClick(event, eventType) {
+    console.log(this.service);
     console.log(event, eventType);
   }
 }
