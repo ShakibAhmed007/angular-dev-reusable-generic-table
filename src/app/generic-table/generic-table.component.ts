@@ -28,8 +28,6 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   ngOnInit() {
-    console.log('service', this.service);
-    console.log(this.tableData);
     this.dataSource = new MatTableDataSource(this.tableData);
   }
 
