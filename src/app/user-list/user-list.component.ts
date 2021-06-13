@@ -20,6 +20,7 @@ export class UserListComponent implements OnInit {
   constructor(public userListService: UserListService) {}
 
   ngOnInit() {
+    // Apply condition on edit and delete button
     this.userListService.getList().subscribe(res => {
       this.tableData = res.map(item => {
         if (item['age'] === '20') {
