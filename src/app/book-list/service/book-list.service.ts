@@ -11,25 +11,25 @@ export class BookListService {
       id: 2,
       bookName: 'The Devil Wears Prada',
       price: 100,
-      author: 'B'
+      author: 'A'
     },
     {
       id: 3,
       bookName: 'The Curious Incident of the Dog',
       price: 400,
-      author: 'C'
+      author: 'B'
     },
     {
       id: 4,
       bookName: 'How to Win Friends and Influence',
       price: 300,
-      author: 'D'
+      author: 'B'
     },
     {
       id: 5,
       bookName: 'Cloudy with a Chance of Meatballs',
       price: 200,
-      author: 'E'
+      author: 'C'
     }
   ];
 

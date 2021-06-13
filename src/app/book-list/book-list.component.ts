@@ -20,7 +20,17 @@ export class BookListComponent implements OnInit {
 
   ngOnInit() {
     this.bookListService.getList().subscribe(res => {
-      this.tableData = res;
+      this.tableData = res.map(item => {
+        if (item['author'] === 'A') {
+          item['isEditable'] = false;
+          return item;
+        }
+        if (item['author'] === 'B') {
+          item['isDeletable'] = false;
+          return item;
+        }
+        return item;
+      });
     });
   }
 }
