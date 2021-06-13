@@ -19,6 +19,7 @@ export class BookListComponent implements OnInit {
   constructor(public bookListService: BookListService) {}
 
   ngOnInit() {
+    // Apply condition on edit and delete
     this.bookListService.getList().subscribe(res => {
       this.tableData = res.map(item => {
         if (item['author'] === 'A') {
