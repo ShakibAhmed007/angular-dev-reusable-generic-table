@@ -21,7 +21,16 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     this.userListService.getList().subscribe(res => {
-      this.tableData = res;
+      this.tableData = res.map(item => {
+        if (item['age'] === '20') {
+          item['isEditable'] = false;
+          return item;
+        } else if (item['age'] === '30') {
+          item['isDeletable'] = false;
+          return item;
+        }
+        return item;
+      });
     });
   }
 }

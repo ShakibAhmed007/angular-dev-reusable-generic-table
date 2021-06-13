@@ -10,71 +10,61 @@ export class UserListService {
       id: 1,
       userName: 'Shakib',
       userEmail: 'a@gmail.com',
-      age: '30',
-      isEditable: false
+      age: '20'
     },
     {
       id: 2,
       userName: 'Devil',
       userEmail: 'a@gmail.com',
-      age: '25',
-      canEdit: false
+      age: '20'
     },
     {
       id: 3,
       userName: 'Iron-Man',
       userEmail: 'a@gmail.com',
-      age: '20',
-      canEdit: false
+      age: '20'
     },
     {
       id: 4,
       userName: 'Wonder-Woman',
       userEmail: 'a@gmail.com',
-      age: '30',
-      canEdit: true
+      age: '30'
     },
     {
       id: 5,
       userName: 'Super-Man',
       userEmail: 'a@gmail.com',
-      age: '40',
-      canEdit: true
+      age: '30'
     },
     {
       id: 6,
       userName: 'Shakib',
       userEmail: 'a@gmail.com',
-      age: '30',
-      canEdit: true
+      age: '30'
     },
     {
       id: 7,
       userName: 'Devil',
       userEmail: 'a@gmail.com',
-      age: '25',
-      canEdit: true
+      age: '30'
     },
     {
       id: 8,
       userName: 'Iron-Man',
       userEmail: 'a@gmail.com',
-      age: '40',
-      canEdit: true
+      age: '40'
     },
     {
       id: 9,
       userName: 'Wonder-Woman',
       userEmail: 'a@gmail.com',
-      age: '40',
-      canEdit: true
+      age: '40'
     },
     {
       id: 10,
       userName: 'Super-Man',
       userEmail: 'a@gmail.com',
-      age: '40',
-      canEdit: false
+      age: '40'
     }
   ];
 
