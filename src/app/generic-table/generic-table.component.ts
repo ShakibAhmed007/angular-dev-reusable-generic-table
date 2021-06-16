@@ -39,9 +39,9 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 
-    this.sort.sortChange.subscribe(() => {
-      console.log(this.sort.sortChange);
-    });
+    // this.sort.sortChange.subscribe(() => {
+    //   console.log(this.sort.sortChange);
+    // });
 
     /*
      * Get Data From server
