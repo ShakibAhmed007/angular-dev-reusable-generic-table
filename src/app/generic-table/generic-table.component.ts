@@ -39,33 +39,36 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 
-    this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
-    merge(this.sort.sortChange, this.paginator.page)
-      .pipe(
-        startWith({}),
-        switchMap(() => {
-          this.isLoadingResults = true;
-          return this.service.getList(
-            // create http req body with this parameter
-            this.sort.active,
-            this.sort.direction,
-            this.paginator.pageIndex + 1,
-            this.paginator.pageSize
-          );
-        }),
-        map(data => {
-          this.isLoadingResults = false;
-          return data;
-        }),
-        catchError(() => {
-          this.isLoadingResults = false;
-          return of([]);
-        })
-      )
-      .subscribe(data => {
-        this.dataSource = data;
-        this.paginator.length = this.dataSource.data.length;
-      });
+    /*
+     * Get Data From server
+     */
+    // this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
+    // merge(this.sort.sortChange, this.paginator.page)
+    //   .pipe(
+    //     startWith({}),
+    //     switchMap(() => {
+    //       this.isLoadingResults = true;
+    //       return this.service.getList(
+    //         // create http req body with this parameter
+    //         this.sort.active,
+    //         this.sort.direction,
+    //         this.paginator.pageIndex + 1,
+    //         this.paginator.pageSize
+    //       );
+    //     }),
+    //     map(data => {
+    //       this.isLoadingResults = false;
+    //       return data;
+    //     }),
+    //     catchError(() => {
+    //       this.isLoadingResults = false;
+    //       return of([]);
+    //     })
+    //   )
+    //   .subscribe(data => {
+    //     this.dataSource = data;
+    //     this.paginator.length = this.dataSource.data.length;
+    //   });
   }
 
   applyFilter(event: Event) {
