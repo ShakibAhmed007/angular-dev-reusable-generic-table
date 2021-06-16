@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { TableHttpComponent } from './table-http/table-http.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule
   ],
   declarations: [
     AppComponent,
