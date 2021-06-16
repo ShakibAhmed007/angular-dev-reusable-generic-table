@@ -15,6 +15,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { TableHttpComponent } from './table-http/table-http.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -26,14 +29,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
     HelloComponent,
     BookListComponent,
     UserListComponent,
-    GenericTableComponent
+    GenericTableComponent,
+    TableHttpComponent
   ],
   bootstrap: [AppComponent]
 })
