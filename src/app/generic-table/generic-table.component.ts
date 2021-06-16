@@ -8,6 +8,8 @@ import {
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { merge, of } from 'rxjs';
+import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-generic-table',
@@ -24,6 +26,8 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
 
   objectKeys = Object.keys;
   dataSource: any;
+  isLoadingResults = false;
+  resultsLength;
 
   constructor() {}
 
@@ -34,6 +38,34 @@ export class GenericTableComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+
+    this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
+    merge(this.sort.sortChange, this.paginator.page)
+      .pipe(
+        startWith({}),
+        switchMap(() => {
+          this.isLoadingResults = true;
+          return this.service.getList(
+            // create http req body with this parameter
+            this.sort.active,
+            this.sort.direction,
+            this.paginator.pageIndex + 1,
+            this.paginator.pageSize
+          );
+        }),
+        map(data => {
+          this.isLoadingResults = false;
+          return data;
+        }),
+        catchError(() => {
+          this.isLoadingResults = false;
+          return of([]);
+        })
+      )
+      .subscribe(data => {
+        this.dataSource = data;
+        this.paginator.length = this.dataSource.data.length;
+      });
   }
 
   applyFilter(event: Event) {
