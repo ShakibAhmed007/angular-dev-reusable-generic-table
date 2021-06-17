@@ -13,7 +13,7 @@ import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 export class TableHttpComponent {
   displayedColumns: string[] = ['created', 'state', 'number', 'title'];
   exampleDatabase: ExampleHttpDatabase | null;
-  data: GithubIssue[] = [];
+  data: any = [];
 
   resultsLength = 0;
   isLoadingResults = true;
@@ -58,6 +58,15 @@ export class TableHttpComponent {
         })
       )
       .subscribe(data => (this.data = data));
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.data.filter = filterValue.trim().toLowerCase();
+
+    if (this.data.paginator) {
+      this.data.paginator.firstPage();
+    }
   }
 }
 
